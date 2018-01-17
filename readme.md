@@ -39,10 +39,11 @@ Features:
     *   Ability to make an http server to **control app from another device's browser**
     *   Ability to set port, username and password for portal
 
-Quick Start:
+Download:
 ------
 
-* You can start with your platform's binaries in Binaries folder and start using the program.
+* You can download binary for your operating system from releases:
+[https://github.com/manzik/Monitor-Master/releases/](https://github.com/manzik/Monitor-Master/releases/)
 
 
 Notes:
@@ -50,5 +51,5 @@ Notes:
 
 * I recommend you to read HTML file in help folder before start using program.
 * Libraries used in this program have their own license and they are avalilable in js folder in source code folder and resources/app folder in binaries.
-*   Source code is written in javascript and electronjs and is available if you need to make changes.
-*   Web portal doesn't work properly on Internet Explorer.
+* Source code is written in javascript and electronjs and is available if you need to make changes.
+* Web portal doesn't work properly on Internet Explorer.
