@@ -42,7 +42,7 @@ Features:
 Download:
 ------
 
-* You can download binary for your operating system from releases:
+You can download binary for your operating system from releases:
 
 [https://github.com/manzik/Monitor-Master/releases/](https://github.com/manzik/Monitor-Master/releases/)
 
