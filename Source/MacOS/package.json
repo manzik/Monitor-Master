@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "basic-auth-connect": "1.0.0",
+    "body-parser": "1.15.2",
+    "compression": "1.6.2",
+    "express": "4.14.0",
+    "express-session": "1.14.1",
+    "moment": "2.14.1",
+    "nodemailer": "2.6.0",
+    "nodemailer-wellknown": "0.1.10",
+    "request": "2.74.0",
+    "path": "0.12.7"
+  },
+  "main": "main.js",
+  "name": "Monitor-Master",
+  "version": "1.0.0",
+  "author": "Manzik <mohsenyousefian77@gmail.com>",
+  "productName": "Monitor Master",
+  "devDependencies":
+  {
+    "electron-prebuilt": "1.4.0"
+  }
+}

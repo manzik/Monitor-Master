@@ -1,0 +1,5 @@
+electron-packager . --platform=win32 --arch=ia32 --icon=./icon.ico --version-string.CompanyName="Manzik" --win32metadata.ProductName="Monitor Master" --win32metadata.FileDescription="Monitor Master" --win32metadata.OriginalFilename="Monitor Master" 
+electron-packager . --platform=win32 --arch=x64 --icon=./icon.ico --version-string.CompanyName="Manzik" --win32metadata.ProductName="Monitor Master" --win32metadata.FileDescription="Monitor Master" --win32metadata.OriginalFilename="Monitor Master"
+electron-packager . --platform=linux --arch=ia32 --icon=./icon.ico
+electron-packager . --platform=linux --arch=x64 --icon=./icon.ico
+electron-packager . --platform=darwin --icon=./icon.icns

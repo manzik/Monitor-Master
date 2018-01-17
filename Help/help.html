@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        img
+        {
+            width: 780px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:800px;height:100%;background-color:rgb(207, 207, 207);left:50%;transform:translateX(-50%);position:fixed;top:0;overflow-y:auto;overflow-x:hidden;padding:20px">
+        <h2>Main Window</h2>
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            You can hide app to tray by minimizing app.
+        </div>
+        <h2>Websites</h2>
+        <img src="img/websites.png" />
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            In this section you can add, edit, delete and have a quick list of information of websites.<br />
+            Response time: it is time spent to wait, connect and fully receive data from website.<br />
+            <h4>Add</h4><br />
+            <img src="img/websitesadd.png" />
+            <div style="padding:0;margin:10px;">
+You can add websites in this window.<br/>
+Url Address: Enter address website you want to monitor without portocol here.<br />
+Protocol: You can select HTTP or HTTPS for protocol of websites you want to monitor here.<br />
+Check Interval: Time to delay before checking websites availibility and response time each time.<br />
+Timeout: Monitor master will stop waiting for websites response and consider it as error if websites doesnt respond after time you enter.<br />
+After you are done adding websites click "Done" button<br />
+            </div>
+            <br />
+        </div>
+        <h2>Notify</h2>
+        <img src="img/notify.png" />
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            In this section you can change notifying preferences.<br />
+            To edit settings for a website and not default select that website from Websites tab<br />
+            Note: on first attempt to send email on gmail google will email you about an app that tried to access gmail and asks if you want to allow them to access your accout. Accept that request, next time emailing will work as expected.<br />
+            <h4>Settings</h4><br />
+            <div style="padding:0;margin:10px;">
+                Sender Email: your email wich notifying emails are going to be sent from.<br />
+                Sender Mail service name: sender email's service provider.<br />
+                Sender Email password: send email's password.<br />
+                Receiver Email : Email that you want to send email alert to.<br />
+                If options in down input are not set for a website then default settings will be used for notifying.<br />
+            </div>
+            <br />
+        </div>
+        <h2>Chart</h2>
+        <img src="img/chart.png" />
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            In this section you can view charts for your website's availability and reponse time.<br />
+            <h4>Date range</h4><br />
+            <div style="padding:0;margin:10px;">
+                Click Date input to select range or one day to view chart for that range of time. Ranges are selected in utc but datas are shown in local time.<br />
+            </div>
+            <br />
+        </div>
+        <h2>Report</h2>
+        <img src="img/report.png" />
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            In this section you can view detailed report for your website.<br />
+            <h4>Date range</h4><br />
+            <div style="padding:0;margin:10px;">
+                Click Date input to select range or one day to view report for that range of time. Ranges are selected in utc but datas are shown in local time.<br />
+            </div>
+            <br />
+        </div>
+        <h2>Web Portal</h2>
+        <img src="img/webportal.png" />
+        <div style="word-wrap:break-word;padding:0;margin:10px;">
+            In this section you can change settings for web portal or turn it on or off.<br />
+            <div style="padding:0;margin:10px;">
+                Using web portal you can control app from other devices on port you defined.<br />
+                In your browser navigate to http://&lt;computer ip&gt;:&lt;port you defined&gt; to access this portal. <br />
+            </div>
+            <br />
+        </div>
+    </div>
+</body>
+</html>

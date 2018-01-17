@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="js/datatables/material.min.css" />
+    <link rel="stylesheet" href="js/datatables/dataTables.material.min.css" />
+    <link rel="stylesheet" href="js/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/jquery-watch-master/jquery-watch.min.js"></script>
+    <script src="js/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/datatables/dataTables.material.min.js"></script>
+    <script src="js/plotly-latest.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/daterangepicker/moment.min.js"></script>
+    <script src="js/daterangepicker/daterangepicker.js"></script>
+    <script>
+
+    </script>
+    <script src="js/webportal/wp.js"></script>
+    <!--<script src="js/main.js"></script>-->
+</head>
+<body>
+    <header>
+        <div class="headeritem" style="left:0%;"><b class="headeritemchild">Web Portal</b></div>
+        <div class="headeritem" style="left:20%;"><b class="headeritemchild">Report</b></div>
+        <div class="headeritem" style="left:40%;"><b class="headeritemchild">Chart</b></div>
+        <div class="headeritem" style="left:60%;"><b class="headeritemchild">Notify</b></div>
+        <div class="headeritem" style="left:80%;"><b class="headeritemchild">Websites</b><br /><span style="font-weight: lighter;font-family:Arial;font-size:13px;position:absolute;transform: translateX(-50%);left:50%;top:60%;" id="currentsite"></span></div>
+    </header>
+    <div id="content">
+        <div class="content" id="web_portal" style="display:none;opacity:0;margin:10px;top:50px;height:calc(100% - 50px);position:fixed;width:100%;">
+            <div style="text-align:center;position:relative;padding:10px;background-color:rgb(50,50,50);height:auto;color:white;width:calc(100% - 60px);margin:20px;margin-top:10px;margin-bottom:0;left:50%;transform:translateX(-50%);width:700px;border-radius:5px 5px 0 0;">
+
+                <b style="position:relative;font-size:20px;">Web Portal</b>
+                <label class="switch" id="webportalswitch" style="margin:10px;float:right;position:relative;">
+                    <input type="checkbox" id="dowebportal">
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div style="box-shadow:inset 0px 0px 20px -8px black;margin-top:0;margin-top:0px !important;position:relative;padding:10px;background-color:rgb(255,255,255);height:auto;width:calc(100% - 60px);margin:20px;margin-bottom:0;left:50%;transform:translateX(-50%);width:700px;border-radius:0px 0px 5px 5px;">
+
+                <b style="margin:20px">Username: </b><input type="text" placeholder="Username" style="margin:20px;left:20px;position:relative;" id="portaluser" /><br />
+                <b style="margin:20px">Password: </b><input type="text" placeholder="Password" style="margin:20px;left:20px;position:relative;" id="portalpass" /><br />
+                <b style="margin:20px">Port: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="number" placeholder="Port" value="1234" style="margin:20px;left:35px;position:relative;" id="portalport" /><br />
+                <button id="savewebportal" style="box-shadow:inset 0px 0px 20px -1px white;float:right;position:relative;border:none;transform:translateY(-60%);left:initial;top:initial;">Save</button>
+            </div>
+
+        </div>
+        <div class="content" id="report" style="display:none;opacity:0;">
+            <b style="margin:20px;position:fixed;top:55px;" id="reportnotselected">Please first select a website</b>
+
+            <div style="top:60px;height:calc(100% - 60px);width:100%;margin:5px;position:fixed;" id="reportcont">
+                <b style="margin:10px">Range: </b><input style="margin:5px" type="text" id="reportdate">
+                <div id="reportdata" style="overflow:auto;height:calc(100% - 25px);width:100%;"></div>
+            </div>
+        </div>
+        <div class="content" id="chart" style="display:none;opacity:0;">
+            <b style="margin:20px;position:fixed;top:55px;" id="chartnotselected">Please first select a website</b>
+            <div style="top:50px;height:calc(100% - 55px);width:100%;left:0;position:fixed;" id="chartcont">
+                <b style="margin:10px">Range: </b><input style="margin:5px" type="text" id="chartdate"><b style="margin:10px">type: </b>
+                <select id="charttype">
+                    <option value="upt">Uptime</option>
+                    <option value="res">Response time</option>
+                </select>
+                <div id="charty" style="height:100%;">
+
+                </div>
+            </div>
+        </div>
+        <div class="content" id="notify" style="display:none;opacity:0;overflow:hidden;position:relative;">
+            <div style='position:relative;padding:10px;background-color:rgb(50,50,50);height:auto;color:white;width:calc(100% - 60px);margin:20px;margin-top:10px;margin-bottom:0;'>
+                <b id="defaultb">Default settings: </b>
+            </div>
+            <div style="box-shadow:inset 0px 0px 20px -4px;margin:20px;margin-top:0px;margin-top:0px;width:calc(100% - 60px);padding:10px;height:calc(50% - 40px);position:relative;overflow:auto;" id="defaultnotify">
+
+                <b>Sender Email : </b><input type="email" placeholder="example@mail.com" id="defsnemail" /><br />
+                <b>Sender Mail service name: </b><select id="mailservice" style="border: 1px solid #ebebeb;color: #515151;height:25px;font-size:17px;font-family:Arial;margin:10px;">
+                    <option value="1und1">1und1</option>
+                    <option value="AOL">AOL</option>
+                    <option value="DebugMail.io">DebugMail.io</option>
+                    <option value="DynectEmail">DynectEmail</option>
+                    <option value="FastMail">FastMail</option>
+                    <option value="GandiMail">GandiMail</option>
+                    <option value="Gmail">Gmail</option>
+                    <option value="Godaddy">Godaddy</option>
+                    <option value="GodaddyAsia">GodaddyAsia</option>
+                    <option value="GodaddyEurope">GodaddyEurope</option>
+                    <option value="hot.ee">hot.ee</option>
+                    <option value="Hotmail">Hotmail</option>
+                    <option value="iCloud">iCloud</option>
+                    <option value="mail.ee">mail.ee</option>
+                    <option value="Mail.ru">Mail.ru</option>
+                    <option value="Mailgun">Mailgun</option>
+                    <option value="Mailjet">Mailjet</option>
+                    <option value="Mandrill">Mandrill</option>
+                    <option value="Naver">Naver</option>
+                    <option value="OpenMailBox">OpenMailBox</option>
+                    <option value="Postmark">Postmark</option>
+                    <option value="QQ">QQ</option>
+                    <option value="QQex">QQex</option>
+                    <option value="SendCloud">SendCloud</option>
+                    <option value="SendGrid">SendGrid</option>
+                    <option value="SES">SES</option>
+                    <option value="SES-US-EAST-1">SES-US-EAST-1</option>
+                    <option value="SES-US-WEST-2">SES-US-WEST-2</option>
+                    <option value="SES-EU-WEST-1">SES-EU-WEST-1</option>
+                    <option value="Sparkpost">Sparkpost</option>
+                    <option value="Yahoo">Yahoo</option>
+                    <option value="Yandex">Yandex</option>
+                    <option value="Zoho">Zoho</option>
+                </select><br />
+                <b>Sender Email password: </b><input type="password" id="mailpass" /> <br />
+                <b>Notify when server went offline : </b><input type="checkbox" id="defnwo" checked /><br />
+                <b>Notify when server became online : </b><input type="checkbox" id="defnbo" checked /><br />
+                <b>Show baloon : </b><input type="checkbox" id="defbaloon" checked /><br />
+                <b>Default receiver Email : </b><input type="email" placeholder="example@mail.com" id="defnemail" />
+                <div>
+                    <button id="savenotifydef" style="box-shadow:inset 0px 0px 20px -1px white;float:right;margin:10px;top:initial;bottom:initial;left:initial;position:relative;border:none;">Save</button>
+                </div>
+            </div>
+            <div style='position:relative;padding:10px;background-color:rgb(50,50,50);height:auto;color:white;width:calc(100% - 60px);margin:20px;margin-top:10px;margin-bottom:0;'>
+                <b id="siteb">Notify settings for website: </b><b id="siteb" class="sitenurl"></b>
+            </div>
+            <div style="box-shadow:inset 0px 0px 20px -4px;margin:20px;width:calc(100% - 60px);padding:10px;height:calc(50% - 40px);position:relative;overflow:auto;margin-top:0;" id="sitenotify">
+
+                <b>Notify when server went offline : </b><input type="checkbox" id="sitenwo" checked /><br />
+                <b>Notify when server became online : </b><input type="checkbox" id="sitenbo" checked /><br />
+                <b>Show baloon : </b><input type="checkbox" id="sitebaloon" checked /><br />
+                <b>Receiver Email : </b><input type="email" placeholder="example@mail.com" id="sitenemail" />
+                <div>
+                    <button id="resetnotify" style="box-shadow:inset 0px 0px 20px -1px white;float:right;margin:10px;top:initial;bottom:initial;left:initial;position:relative;border:none;">Reset</button>
+                    <button id="savenotifysite" style="box-shadow:inset 0px 0px 20px -1px white;float:right;margin:10px;top:initial;bottom:initial;left:initial;position:relative;border:none;">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="websites">
+            <b style="top:75px;margin:20px 10px 20px 35px;position:relative;color:#444444;font-family:Arial;font-size:16px;font-weight:bold;text-decoration:none;text-shadow:0px 1px 0px #ffffff;z-index:1;">Monitoring: </b>
+            <label class="switch" style="top:87px;position:relative;left:15px;z-index:1;">
+                <input type="checkbox" id="domonitor" checked>
+                <div class="slider round"></div>
+            </label>
+            <button id="addbutton" style="float:right;right:20px;margin:20px;font-family:Arial;font-size:20px;position:absolute;top:40px;height:40px;width:40px;border:none;font-weight:bolder;">+</button>
+            <button id="editbutton" style="float:right;right:70px;margin:20px;font-family:Arial;font-size:20px;position:absolute;top:40px;height:40px;width:0px;border:none;font-weight:bolder;padding:0px;"></button>
+            <button id="deletebutton" style="float:right;right:120px;margin:20px;font-family:Arial;font-size:20px;position:absolute;top:40px;height:40px;width:0px;border:none;font-weight:bolder;padding:0px;"></button>
+            <div style="left:0;margin:60px 20px 20px 20px;height:calc(100% - 130px);position:fixed;width:calc(100% - 40px);overflow-y:unset;padding:0;" id="websiteslistcontainer">
+                <table class="mdl-data-table" id="websiteslist"></table>
+            </div>
+            <div id="addwindow" style="z-index:2;left:0;display:none;opacity:0;top:55px;position:fixed;width:100%;height:calc(100% - 50px);background-color:white;padding:20px;">
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Url Address: </b> <input id="addurl" type="url" placeholder="Example.com" style="position:relative;width:200px;height:25px;font-size:17px;font-family:Arial;margin:10px;" /><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Protocol: </b> <select id="addprotocol" style="border: 1px solid #ebebeb;color: #515151;height:25px;font-size:17px;font-family:Arial;margin:10px;">
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                </select><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Check Interval (Seconds): </b> <input id="addinterval" type="number" value="60" style="margin:10px;position:relative;width:85px;height:25px;font-size:17px;font-family:Arial;" /><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Timeout (Milliseconds): </b> <input id="addtimeout" type="number" value="2000" style="margin:10px;position:relative;width:100px;height:25px;font-size:17px;font-family:Arial;" /><br />
+                <div id="addsiteadd"><b id="addsiteaddchild">Add</b></div><div id="addsitecancel"><b id="addsitecancelchild">Done</b></div>
+            </div>
+            <div id="editwindow" style="z-index:2;left:0;display:none;opacity:0;top:55px;position:fixed;width:100%;height:calc(100% - 50px);background-color:white;padding:20px;">
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Url Address: </b> <input id="editurl" type="url" placeholder="Example.com" style="position:relative;width:200px;height:25px;font-size:17px;font-family:Arial;margin:10px;" /><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Protocol: </b> <select id="editprotocol" style="border: 1px solid #ebebeb;color: #515151;height:25px;font-size:17px;font-family:Arial;margin:10px;">
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                </select><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Check Interval (Seconds): </b> <input id="editinterval" type="number" value="60" style="margin:10px;position:relative;width:85px;height:25px;font-size:17px;font-family:Arial;" /><br />
+                <b style="margin:20px;font-family:Arial;font-size:16px;margin:10px;">Timeout (Milliseconds): </b> <input id="edittimeout" type="number" value="2000" style="margin:10px;position:relative;width:100px;height:25px;font-size:17px;font-family:Arial;" /><br />
+                <div id="editsiteadd"><b id="editsiteaddchild">save</b></div><div id="editsitecancel"><b id="editsitecancelchild">Cancel</b></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

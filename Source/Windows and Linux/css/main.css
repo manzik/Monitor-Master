@@ -1,0 +1,437 @@
+*
+{
+    outline: none;
+}
+/**/
+body
+{
+    overflow: auto;
+}
+
+#defaultnotify > b#defaultb, #sitenotify > b#siteb
+{
+    position: relative;
+    color: #1b1b1b;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    z-index: 1;
+    margin: 10px;
+}
+
+#defaultnotify > b, #sitenotify > b
+{
+    position: relative;
+    color: #444444;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    z-index: 1;
+    margin: 10px;
+}
+
+#defaultnotify > input, #sitenotify > input
+{
+    margin: 10px;
+    font-size: 17px;
+}
+
+    #defaultnotify > input#defnemail, #sitenotify > input#sitenemail
+    {
+        width: 250px;
+    }
+
+#editsiteadd
+{
+    left: 15%;
+    transition: all 0.3s ease-in-out;
+    bottom: 20px;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #00ff4c;
+    display: inline-block;
+    cursor: pointer;
+    color: #313131;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #abffa7;
+}
+
+    #editsiteadd:hover
+    {
+        background-color: #00e645;
+    }
+
+    #editsiteadd:active
+    {
+        background-color: #00ce3e;
+    }
+
+#editsitecancel
+{
+    left: 65%;
+    transition: all 0.3s ease-in-out;
+    bottom: 20px;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #20c2ff;
+    display: inline-block;
+    cursor: pointer;
+    color: #313131;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #79bdff;
+}
+
+    #editsitecancel:hover
+    {
+        background-color: #18b6e1;
+    }
+
+    #editsitecancel:active
+    {
+        background-color: #1b9bcc;
+    }
+
+#editsiteaddchild
+{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+#editsitecancelchild
+{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+/**/
+.selectedrow
+{
+    background-color: #e1e1e1 !important;
+}
+
+#deletebutton
+{
+    border-radius: 5px;
+    transition: all 0.3s;
+    background-color: #ed4545;
+    padding: 20px;
+    font-family: Arial, Verdana;
+    background-image: url(../img/erase.png);
+    background-size: cover;
+}
+
+    #deletebutton:hover
+    {
+        background-color: #e24343;
+    }
+
+    #deletebutton:active
+    {
+        background-color: #cf3e3e;
+    }
+
+#editbutton
+{
+    border-radius: 5px;
+    transition: all 0.3s;
+    background-color: #45baed;
+    padding: 20px;
+    font-family: Arial, Verdana;
+    background-image: url(../img/edit.png);
+    background-size: cover;
+}
+
+    #editbutton:hover
+    {
+        background-color: #43b1e1;
+    }
+
+    #editbutton:active
+    {
+        background-color: #3fa8d5;
+    }
+
+#resetnotify
+{
+    left: 15%;
+    transition: all 0.3s ease-in-out;
+    bottom: 20px;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #d5ff00;
+    display: inline-block;
+    cursor: pointer;
+    color: #313131;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ebffa7;
+}
+#resetnotify:disabled
+{
+    background-color: #efff9d;
+    color:#8d8d8d;
+}
+#resetnotify:hover:not(:disabled)
+{
+    background-color: #bbe000;
+}
+#resetnotify:active:not(:disabled)
+{
+    background-color: #abcc00;
+}
+#addsiteadd, #savenotifydef,#savenotifysite,#savewebportal
+{
+    left: 15%;
+    transition: all 0.3s ease-in-out;
+    bottom: 20px;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #00ff4c;
+    display: inline-block;
+    cursor: pointer;
+    color: #313131;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #abffa7;
+}
+
+    #addsiteadd:hover, #savenotifydef:hover,savenotifysite:hover,,#savewebportal:hover
+    {
+        background-color: #00e645;
+    }
+
+    #addsiteadd:active, #savenotifydef:active,savenotifysite:active,#savewebportal:active
+    {
+        background-color: #00ce3e;
+    }
+
+#addsitecancel
+{
+    left: 65%;
+    transition: all 0.3s ease-in-out;
+    bottom: 20px;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #20c2ff;
+    display: inline-block;
+    cursor: pointer;
+    color: #313131;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #79bdff;
+}
+
+    #addsitecancel:hover
+    {
+        background-color: #18b6e1;
+    }
+
+    #addsitecancel:active
+    {
+        background-color: #1b9bcc;
+    }
+
+#addsiteaddchild
+{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+#addsitecancelchild
+{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+#addbutton
+{
+    border-radius: 5px;
+    transition: all 0.2s;
+    background-color: #87e27e;
+}
+
+    #addbutton:hover
+    {
+        background-color: #65e075;
+    }
+
+    #addbutton:active
+    {
+        background-color: #6cd072;
+    }
+
+.content
+{
+    top: 70px;
+    height: calc(100% - 70px);
+    z-index: 0;
+    transition: opacity 0.2s linear;
+}
+
+.headeritem
+{
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    top: 0;
+    height: 50px;
+    width: 20%;
+    position: fixed;
+    /**/
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #f5f5f5;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #555555;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+    .headeritem:hover
+    {
+        background-color: #efefef;
+    }
+
+    .headeritem:active
+    {
+        top: 1px;
+    }
+
+.headeritemchild
+{
+    position: absolute;
+    transform: translateY(-50%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.selectedheaderitem
+{
+    color: #000000;
+    top: 1px;
+    background-color: #efefef;
+}
+/*sliders*/
+.switch
+{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+     top:5px;
+}
+.switch#webportalswitch
+{
+    transform:translateY(-50%);
+}
+    .switch input
+    {
+        display: none;
+    }
+
+.slider
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before
+    {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider
+{
+    background-color: #2196F3;
+}
+
+input:focus + .slider
+{
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before
+{
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round
+{
+    border-radius: 34px;
+}
+
+    .slider.round:before
+    {
+        border-radius: 50%;
+    }
