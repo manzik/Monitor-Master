@@ -5,7 +5,7 @@ Monitor Master
 
 **Monitor Master** is an advanced and easy to use software to monitor websites with wide range of features. It is available on Windows (Windows 7 or newer), Linux and MacOS (10.9 or newer) on both x32 and x86 architecture.
 
-Features:
+Features
 ---------
 
 *   Websites
@@ -39,7 +39,7 @@ Features:
     *   Ability to make an http server to **control app from another device's browser**
     *   Ability to set port, username and password for portal
 
-Download:
+Download
 ------
 
 You can download binary for your operating system from releases:
@@ -47,7 +47,7 @@ You can download binary for your operating system from releases:
 [https://github.com/manzik/Monitor-Master/releases/](https://github.com/manzik/Monitor-Master/releases/)
 
 
-Notes:
+Notes
 ------
 
 * I recommend you to read HTML file in help folder before start using program.
